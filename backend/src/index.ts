@@ -9,13 +9,7 @@ const app = express();
 const PORT = 4000;
 
 // Enable CORS for all origins (or specify your frontend URL)
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://shades-of-web-one.vercel.app/"], // allow only your frontend
-    methods: ["GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.get("/api/communities", async (_req, res) => {
   try {
