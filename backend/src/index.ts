@@ -9,7 +9,12 @@ const app = express();
 const PORT = 4000;
 
 // Enable CORS for all origins (or specify your frontend URL)
-app.use(cors());
+app.use(
+  cors({
+    origin: "*", // allow only your
+    credentials: true,
+  })
+);
 
 app.get("/api/communities", async (_req, res) => {
   try {
